@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة الطلاب</title>
+    <link rel="stylesheet" href="students.css">
+</head>
+<body>
+<div class="bubbles">
+  <span></span><span></span><span></span><span></span>
+</div>
+<div class="background-rings"></div>
+<div class="glow-effect"></div>
+<div class="clock" id="clock">00:00:00</div>
+
+<h1 class="welcome">إدارة الطلاب 👨‍🎓</h1>
+
+<!-- زر الرجوع للداشبورد -->
+<button class="logout-btn" onclick="goBack()">الرجوع للداش</button>
+
+
+<!-- فيديو الخلفية -->
+<video autoplay muted loop id="background-video">
+    <source src="raghoo.mp4" type="video/mp4">
+</video>
+
+<!-- هنا جدول أو قائمة الطلاب (dummy data حالياً) -->
+<div class="students-container">
+    <input
+            type="text"
+            id="searchInput"
+            placeholder="ابحث عن اسم الطالب..."
+            style="margin-bottom: 20px; font-size:18px; padding: 8px 15px; border-radius: 12px; border: 1px solid #ccc; width: 60%; display: block; margin-right:auto; margin-left:auto;">
+    <div class="students-container">
+        <input type="text" id="search" class="search-input" placeholder="ابحث عن اسم الطالب..." oninput="searchStudent()">
+        <div class="table-scroll">
+            <table class="students-table">
+                <thead>
+                <tr>
+                    <th>رقم الطالب</th>
+                    <th>اسم الطالب</th>
+                    <th>الإيميل</th>
+                    <th>إجراء</th>
+                </tr>
+                </thead>
+                <tbody id="students-body"></tbody>
+            </table>
+        </div>
+        <button class="add-student-btn" onclick="openAddModal()">+ إضافة طالب</button>
+    </div>
+</div>
+
+
+<!-- نافذة إضافة طالب -->
+<div class="modal" id="addModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeAddModal()">&times;</span>
+    <h2>إضافة طالب جديد</h2>
+    <input type="text" id="studentName" placeholder="اسم الطالب">
+    <input type="email" id="studentEmail" placeholder="البريد الإلكتروني">
+    <button onclick="addStudent()">إضافة</button>
+  </div>
+</div>
+
+<script src="students.js"></script>
+</body>
+</html>

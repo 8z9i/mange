@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة العلامات</title>
+    <link rel="stylesheet" href="grades.css">
+</head>
+<body>
+<div class="bubbles">
+    <span></span><span></span><span></span><span></span>
+</div>
+<div class="background-rings"></div>
+<div class="glow-effect"></div>
+<div class="clock" id="clock">00:00:00</div>
+<h1 class="welcome">إدارة العلامات 📝</h1>
+<button class="logout" onclick="goBack()">الرجوع للداشبورد</button>
+<video autoplay muted loop id="background-video">
+    <source src="raghoo.mp4" type="video/mp4">
+</video>
+
+<div class="grades-container">
+    <input type="text" id="search" class="search-input" placeholder="ابحث عن اسم الطالب..." oninput="searchStudent()">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('final')">النهائية</button>
+        <button class="tab-btn" onclick="switchTab('homework')">الواجبات</button>
+        <button class="tab-btn" onclick="switchTab('mid')">الميد</button>
+        <button class="tab-btn" onclick="switchTab('finalExam')">الفاينل</button>
+    </div>
+    <div class="table-scroll">
+        <table class="grades-table">
+            <thead>
+            <tr>
+                <th>رقم الطالب</th>
+                <th>اسم الطالب</th>
+                <th>المادة</th>
+                <th id="score-header">العلامة النهائية</th>
+                <th>إجراء</th>
+            </tr>
+            </thead>
+            <tbody id="grades-body"></tbody>
+        </table>
+    </div>
+    <button class="add-grade-btn" onclick="openAddModal()">إضافة علامة +</button>
+</div>
+<div class="modal" id="addModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddModal()">&times;</span>
+        <h2>إضافة علامة جديدة</h2>
+        <input type="number" id="studentId" placeholder="رقم الطالب">
+        <input type="text" id="studentName" placeholder="اسم الطالب">
+        <input type="number" id="homework" placeholder="علامة الواجبات (20)">
+        <input type="number" id="mid" placeholder="علامة الميد (35)">
+        <input type="number" id="finalExam" placeholder="علامة الفاينل (45)">
+        <button onclick="addGrade()">إضافة</button>
+    </div>
+</div>
+<script src="grades.js"></script>
+</body>
+</html>

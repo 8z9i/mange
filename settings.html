@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إعدادات المسؤول</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+<div class="bubbles">
+    <span></span><span></span><span></span><span></span>
+</div>
+<div class="background-rings"></div>
+<div class="glow-effect"></div>
+<div class="clock" id="clock">00:00:00</div>
+
+<h1 class="welcome">إعدادات المسؤول ⚙️</h1>
+<button class="logout" onclick="goBack()">الرجوع للداشبورد</button>
+
+<video autoplay muted loop id="background-video">
+    <source src="raghoo.mp4" type="video/mp4">
+</video>
+
+<div class="settings-container">
+    <form class="admin-form" onsubmit="saveSettings(event)">
+        <label>اسم المستخدم الجديد:</label>
+        <input type="text" id="username" placeholder="أدخل اسم المستخدم الجديد" required>
+        <label>البريد الإلكتروني:</label>
+        <input type="email" id="email" placeholder="أدخل البريد الإلكتروني" required>
+        <label>كلمة المرور الجديدة:</label>
+        <input type="password" id="password" placeholder="أدخل كلمة مرور جديدة" required>
+        <button type="submit" class="save-btn">حفظ التعديلات</button>
+    </form>
+</div>
+
+<script src="settings.js"></script>
+</body>
+</html>

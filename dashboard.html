@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="bubbles">
+  <span></span><span></span><span></span><span></span>
+</div>
+<div class="background-rings"></div>
+<div class="clock" id="clock">00:00:00</div>
+
+<h1 class="welcome">Welcome , User</h1>
+<!-- زر تسجيل الخروج -->
+<button class="logout" onclick="logout()">Logout</button>
+
+<!-- فيديو الخلفية -->
+<video autoplay muted loop id="background-video">
+    <source src="raghoo.mp4" type="video/mp4">
+</video>
+
+<!-- الأدوات الثلاث -->
+<div class="tools-container">
+    <div class="tool-card" onclick="location.href='students.html'">👨‍🎓 إدارة الطلاب</div>
+    <div class="tool-card" onclick="location.href='grades.html'">📝 إدارة العلامات</div>
+    <div class="tool-card" onclick="location.href='settings.html'">⚙️ إعدادات المسؤول</div>
+</div>
+
+
+<!-- سكريبت تسجيل الخروج -->
+<script SRC="dashboard.js">
+    function logout() {
+        localStorage.removeItem('loggedIn');
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>
